@@ -25,12 +25,11 @@ function App() {
     return (
       <>
       <div className="navBar">
-        <div>BOOFLIX</div>
+        <div className="navTitle">BOOFLIX</div>
         <input type="text" value={userQuery} onChange={ (e)=>setUserQuery(e.target.value) }/>
       </div>
-      
-      <div className="filmsContainer">
-        <h1>Films</h1>
+      <div className="container">
+<div className="filmsContainer">
           <ul> 
             {movies.map((movie) => {
               return (
@@ -41,6 +40,7 @@ function App() {
                   original_language={movie.original_language}
                   vote_average={movie.vote_average}
                   poster_path={movie.poster_path}
+                  overwiev={movie.overview}
                 />
               )
             })}
@@ -49,7 +49,6 @@ function App() {
 
 
       <div className="tvSeriesContainer">
-        <h1>TV Series</h1>
           <ul>
             {tvSeries.map((tv) => {
               return (
@@ -60,11 +59,14 @@ function App() {
                   original_language={tv.original_language}
                   vote_average={tv.vote_average}
                   poster_path={tv.poster_path}
+                  overwiev={tv.overview}
                 />
               )
             })}
         </ul>
       </div>
+      </div>
+      
       
       </>
       
